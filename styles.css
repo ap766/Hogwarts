@@ -1,0 +1,115 @@
+
+*{
+    margin:0;
+    padding:0;
+    font-family:sans-serif;
+
+}
+.banner{
+    width:100%;
+    height:100vh;
+    /*rgb is actually transaparent stuff red blue yellow  alpha */
+    background-image:linear-gradient(rgba(0,0,0,0.75),rgba(0,0,0,0.75)),url(background.jpeg);
+    background-size: cover;
+    background-position:center;
+}
+.navbar{
+    /*these for layout*/
+    width:95%;
+    margin: auto;
+    padding:35px 0;
+
+    /*to create columns on same line from the divs img and ul whose parent was navbar*/
+    
+    display: flex;
+
+    /*the centre of img aligns with the line between 3 3 (when vertical)*/
+
+    align-items: center;
+    /*to have space between the columns*/
+
+    justify-content: space-between;
+}
+.logo{
+    filter:brightness(100%);
+    width: 120px;
+    cursor: pointer;
+}
+.navbar ul li {
+    list-style: none;
+    display: inline-block;
+    margin: 0 20px;
+    position: relative;/*wasteline*//*assuming it make li as the parent of after but how idk*/
+
+}
+.navbar ul li a {
+    text-decoration: none;
+    color: rgb(171, 160, 160);
+    text-transform: uppercase;
+}
+.navbar ul li::after {            /*after the li*/
+    content:'';
+    height: 3px;
+    width:0;/*visible when you take the cursor there*/
+    background: #f1cc6f;
+    position: absolute;
+    left: 0;
+    bottom: -10px;
+    transition:0.5s;
+    
+}
+.navbar ul li:hover::after
+{
+width:100%;
+}
+.content{
+    width:100%;
+    position:absolute;
+    top:50%;
+    transform:translateY(-50%);
+    text-align:center;
+    color:white
+}
+.content h1{
+    font-size:70px;
+    margin-top:80px;
+}
+.content p{
+    margin:20px auto;
+    font-weight:100;
+    line-height :25px;
+}
+button{
+    width:200px;
+    padding:15px 0;
+    text-align:center;
+    margin:20px 10px;
+    border-radius:25px;
+    font-weight:bold;
+    border:2px solid #f1cc6f;
+    background:transparent;
+    color:white;
+    cursor:pointer;
+    position:relative;
+    overflow:hidden;
+}
+span{
+
+        background:#f1cc6f;
+        height:100%;
+        width:0;
+        border-radius:25px;
+        position:absolute;
+        left:0;
+        bottom:0;
+        z-index:-1;
+        transition:0.5s;
+
+}
+button:hover span{
+    width:100%;
+}   
+button:hover
+{
+border: none;
+}
